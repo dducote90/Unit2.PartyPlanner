@@ -29,11 +29,11 @@ function render() {
             <p>Date: ${party.date}</p>
         </li>`
     })
-    const newPartiesHtml = newParties.name.map((partyName, index) => {
+    const newPartiesHtml = newParties.name.map((nameOfParty, index) => {
         return `
         <li>
             <button onclick="deleteParty(${index})">Delete</button>
-            <p>${partyName}</p>
+            <p>${nameOfParty}</p>
             <p>${newParties.description[index]}</p>
             <p>Location: ${newParties.location[index]}</p>
             <p>Date: ${newParties.date[index]}</p>
@@ -58,7 +58,7 @@ function submitForm(event) {
     const description = form.description.value
     const location = form.location.value
     const date = form.date.value
- 
+    newParties.name.push(partyName)
     newParties.description.push(description)
     newParties.location.push(location)
     newParties.date.push(date)
